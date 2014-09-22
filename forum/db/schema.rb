@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829140329) do
+ActiveRecord::Schema.define(version: 20140922201123) do
+
+  create_table "conteudos", force: true do |t|
+    t.integer  "bimestre"
+    t.string   "nome",       limit: 30
+    t.string   "arquivo",    limit: 36
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pergunta", force: true do |t|
     t.text     "texto"

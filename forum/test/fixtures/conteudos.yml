@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bimestre: 1
+  nome: MyString
+  arquivo: MyString
+
+two:
+  bimestre: 1
+  nome: MyString
+  arquivo: MyString
