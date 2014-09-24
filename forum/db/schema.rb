@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924205913) do
+ActiveRecord::Schema.define(version: 20140924225325) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -49,13 +49,19 @@ ActiveRecord::Schema.define(version: 20140924205913) do
   add_index "pergunta", ["usuario_id"], name: "index_pergunta_on_usuario_id"
 
   create_table "resposta", force: true do |t|
-    t.text     "texto"
     t.integer  "pergunta_id"
+    t.integer  "usuario_id"
+    t.text     "texto"
+    t.integer  "util_s"
+    t.integer  "util_n"
+    t.datetime "horario"
+    t.string   "arquivo",     limit: 36
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "resposta", ["pergunta_id"], name: "index_resposta_on_pergunta_id"
+  add_index "resposta", ["usuario_id"], name: "index_resposta_on_usuario_id"
 
   create_table "tipos", force: true do |t|
     t.string   "nome",       limit: 30

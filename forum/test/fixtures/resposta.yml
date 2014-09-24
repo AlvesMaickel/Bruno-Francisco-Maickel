@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  texto: MyText
   pergunta_id: 
+  usuario_id: 
+  texto: MyText
+  util_s: 1
+  util_n: 1
+  horario: 2014-09-24 19:53:25
+  arquivo: MyString
 
 two:
-  texto: MyText
   pergunta_id: 
+  usuario_id: 
+  texto: MyText
+  util_s: 1
+  util_n: 1
+  horario: 2014-09-24 19:53:25
+  arquivo: MyString
