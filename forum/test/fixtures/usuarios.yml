@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  tipo_id: 
   username: MyString
   email: MyString
   senha: MyString
-  tipouser_id: 
 
 two:
+  tipo_id: 
   username: MyString
   email: MyString
   senha: MyString
-  tipouser_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924200104) do
+ActiveRecord::Schema.define(version: 20140924204450) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -56,14 +56,14 @@ ActiveRecord::Schema.define(version: 20140924200104) do
   end
 
   create_table "usuarios", force: true do |t|
-    t.string   "username",    limit: 40
-    t.string   "email",       limit: 100
-    t.string   "senha",       limit: 30
-    t.integer  "tipouser_id"
+    t.integer  "tipo_id"
+    t.string   "username",   limit: 20
+    t.string   "email",      limit: 30
+    t.string   "senha",      limit: 12
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "usuarios", ["tipouser_id"], name: "index_usuarios_on_tipouser_id"
+  add_index "usuarios", ["tipo_id"], name: "index_usuarios_on_tipo_id"
 
 end
