@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924191542) do
+ActiveRecord::Schema.define(version: 20140924200104) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140924191542) do
 
   add_index "resposta", ["pergunta_id"], name: "index_resposta_on_pergunta_id"
 
-  create_table "tipousers", force: true do |t|
+  create_table "tipos", force: true do |t|
     t.string   "nome",       limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
