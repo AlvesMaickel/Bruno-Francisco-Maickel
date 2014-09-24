@@ -1,4 +1,5 @@
 class Pergunta < ActiveRecord::Base
   belongs_to :usuario
-  validade :texto,presence: true
+  belongs_to :conteudo
+  belongs_to :lista
 end
