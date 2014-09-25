@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925194809) do
+ActiveRecord::Schema.define(version: 20140925202704) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140925194809) do
     t.datetime "updated_at"
   end
 
-  create_table "lista", force: true do |t|
+  create_table "listas", force: true do |t|
     t.integer  "conteudo_id"
     t.string   "arquivo",     limit: 36
     t.string   "nome",        limit: 30
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140925194809) do
     t.datetime "updated_at"
   end
 
-  add_index "lista", ["conteudo_id"], name: "index_lista_on_conteudo_id"
+  add_index "listas", ["conteudo_id"], name: "index_listas_on_conteudo_id"
 
   create_table "perguntas", force: true do |t|
     t.integer  "usuario_id"
