@@ -1,6 +1,6 @@
-class CreatePergunta < ActiveRecord::Migration
+class CreatePerguntas < ActiveRecord::Migration
   def change
-    create_table :pergunta do |t|
+    create_table :perguntas do |t|
       t.references :usuario, index: true
       t.references :conteudo, index: true
       t.references :lista, index: true
