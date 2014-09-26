@@ -5,5 +5,4 @@ class Lista < ActiveRecord::Base
 
 validates :conteudo,presence: true
 
-validates :arquivo,presence: true
 end
