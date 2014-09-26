@@ -1,0 +1,19 @@
+<h2> Listas</h2>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<% @listas.each do |c| %>
+
+    <%= link_to c.nome, lista_path(c) %>
+
+    <%= link_to "Excluir", c, method: :delete %>
+
+    <%= link_to "Editar", edit_lista_path(c) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "Upload de Lista", new_lista_path %>

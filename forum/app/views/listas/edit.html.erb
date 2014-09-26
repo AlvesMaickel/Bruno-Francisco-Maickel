@@ -1,0 +1,22 @@
+<h2>Editar Lista</h2>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+
+<%= form_for @lista, multipart: true do |c| %>
+
+    <%= c.label 'Nome' %>
+
+    <%= c.text_field :nome, maxlength: 30 %>
+
+    <%= c.file_field :arquivo, accept: 'application/pdf' %>
+
+    <% ar = Conteudo.all.map { |c| [c.nome, c.id]} %>
+
+    <%= select_tag(:conteudo, options_for_select(ar)) %>
+
+    <%= c.submit 'Upload' %>
+
+<% end %>

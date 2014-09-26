@@ -25,7 +25,7 @@ class ConteudosController < ApplicationController
 		end
 
 		if @conteudo.save
-			dir = 'public/upload/'
+			dir = 'public/conteudo/'
 			arq = params[:conteudo][:arquivo]
 			file = dir + uid + ".pdf"
 			#FileUtils.cp File.open(arq.read,file)
@@ -45,7 +45,7 @@ class ConteudosController < ApplicationController
 		uid = SecureRandom.uuid
 		params[:conteudo][:arquivo] = uid
 		if @conteudo.update(params.require(:conteudo).permit(:nome,:arquivo,:bimestre))
-			file = 'public/uploads/' + uid +'.pdf'
+			file = 'public/conteudos/' + uid +'.pdf'
 			arq = params[:conteudo][:arquivo]
 			#FileUtils.cp (arq.read,file)
 			redirect_to :conteudos, notice: "Conteúdo #{@conteudo.nome} atualizado"
