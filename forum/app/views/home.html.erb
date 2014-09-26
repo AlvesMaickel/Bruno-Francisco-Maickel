@@ -1,0 +1,31 @@
+
+<body>
+
+<div id="header">
+<h1>Perguntas</h1>
+</div>
+
+<div id="nav">
+<%= link_to "Conteudos" %>
+<%= link_to "Listas" %>
+</div>
+
+<div id="section"">
+<% @perguntas.each do |p| %>
+
+    <%= p.texto %>
+    <%= link_to "visualizar", pergunta_path(p) %>
+    <%= link_to "Responder", new_resposta_path(p) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "Perguntar", new_pergunta_path %>
+</div>
+
+<div id="footer">
+
+</div>
+
+</body>

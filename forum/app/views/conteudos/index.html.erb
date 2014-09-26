@@ -1,0 +1,19 @@
+<h2> Conteúdos</h2>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<% @conteudos.each do |c| %>
+
+    <%= link_to c.nome, conteudo_path(c) %>
+
+    <%= link_to "Excluir", c, method: :delete %>
+
+    <%= link_to "Editar", edit_conteudo_path(c) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "Upload de Conteúdo", new_conteudo_path %>
