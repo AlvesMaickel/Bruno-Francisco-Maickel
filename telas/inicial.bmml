@@ -1,0 +1,37 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="734" measuredH="397" mockupW="637" mockupH="371">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="97" y="26" w="637" h="371" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//www.forummatematica.com/begin</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Accordion" x="129" y="118" w="-1" h="-1" measuredW="150" measuredH="240" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Perguntas%0A-%20Criar%20pergunta%0A-%20Ver%20pergunta%0AListas%0A-%201%BA%20Bimestre%0A-%202%BA%20Bimestre%0A-%203%BA%20Bimestre%0A-%204%BA%20Bimestre</text>
+        <value>0</value>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::List" x="322" y="159" w="336" h="131" measuredW="100" measuredH="126" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Primeira%20pergunta%20mais%20recente%0ASegunda%20pergunta%20mais%20recente%0ATerceira%20pergunta%20mais%20recente%0AQuarta%20pergunta%20mais%20recente%0AQuinta%20pergunta%20mais%20recente</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Link" x="542" y="305" w="-1" h="-1" measuredW="116" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ver%20mais%20perguntas</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::SearchBox" x="398" y="118" w="260" h="-1" measuredW="120" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="322" y="120" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pesquisa%3A</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
