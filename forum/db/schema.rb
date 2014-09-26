@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924225325) do
+ActiveRecord::Schema.define(version: 20140925202704) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140924225325) do
     t.datetime "updated_at"
   end
 
-  create_table "lista", force: true do |t|
+  create_table "listas", force: true do |t|
     t.integer  "conteudo_id"
     t.string   "arquivo",     limit: 36
     t.string   "nome",        limit: 30
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20140924225325) do
     t.datetime "updated_at"
   end
 
-  add_index "lista", ["conteudo_id"], name: "index_lista_on_conteudo_id"
+  add_index "listas", ["conteudo_id"], name: "index_listas_on_conteudo_id"
 
-  create_table "pergunta", force: true do |t|
+  create_table "perguntas", force: true do |t|
     t.integer  "usuario_id"
     t.integer  "conteudo_id"
     t.integer  "lista_id"
@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 20140924225325) do
     t.datetime "updated_at"
   end
 
-  add_index "pergunta", ["conteudo_id"], name: "index_pergunta_on_conteudo_id"
-  add_index "pergunta", ["lista_id"], name: "index_pergunta_on_lista_id"
-  add_index "pergunta", ["usuario_id"], name: "index_pergunta_on_usuario_id"
+  add_index "perguntas", ["conteudo_id"], name: "index_perguntas_on_conteudo_id"
+  add_index "perguntas", ["lista_id"], name: "index_perguntas_on_lista_id"
+  add_index "perguntas", ["usuario_id"], name: "index_perguntas_on_usuario_id"
 
-  create_table "resposta", force: true do |t|
+  create_table "respostas", force: true do |t|
     t.integer  "pergunta_id"
     t.integer  "usuario_id"
     t.text     "texto"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20140924225325) do
     t.datetime "updated_at"
   end
 
-  add_index "resposta", ["pergunta_id"], name: "index_resposta_on_pergunta_id"
-  add_index "resposta", ["usuario_id"], name: "index_resposta_on_usuario_id"
+  add_index "respostas", ["pergunta_id"], name: "index_respostas_on_pergunta_id"
+  add_index "respostas", ["usuario_id"], name: "index_respostas_on_usuario_id"
 
   create_table "tipos", force: true do |t|
     t.string   "nome",       limit: 30
