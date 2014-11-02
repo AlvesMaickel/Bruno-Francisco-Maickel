@@ -1,0 +1,22 @@
+<h2>Editar Conteúdo</h2>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+
+<%= form_for @conteudo, multipart: true do |c| %>
+
+    <%= c.label 'Nome' %>
+
+    <%= c.text_field :nome, maxlength: 30 %>
+
+    <%= c.file_field :arquivo, accept: 'application/pdf' %>
+
+    <%= c.label 'Bimestre' %>
+
+    <%= c.number_field :bimestre, min: 1, max: 4 %>
+
+    <%= c.submit 'Editar' %>
+
+<% end %>
