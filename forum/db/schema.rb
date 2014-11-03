@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925202704) do
+ActiveRecord::Schema.define(version: 20141102235844) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20140925202704) do
     t.integer  "tipo_id"
     t.string   "username",   limit: 20
     t.string   "email",      limit: 30
-    t.string   "senha",      limit: 12
+    t.string   "senha",      limit: 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end

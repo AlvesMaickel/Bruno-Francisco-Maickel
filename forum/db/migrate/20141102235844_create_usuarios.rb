@@ -4,7 +4,7 @@ class CreateUsuarios < ActiveRecord::Migration
       t.references :tipo, index: true
       t.string :username, limit: 20
       t.string :email, limit: 30
-      t.string :senha, limit: 12
+      t.string :senha, limit: 32
 
       t.timestamps
     end
