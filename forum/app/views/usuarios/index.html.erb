@@ -1,1 +1,21 @@
-<h2> usuarios <h2>
+	
+
+
+    <br><br>
+<strong>Usuarios</strong>
+<br><br>
+
+
+<% @usuarios.each do |u| %>
+
+    <%= link_to u.username, usuario_path(u) %>
+
+    <%= link_to "Excluir", u, method: :delete %>
+
+    <%= link_to "Editar", edit_usuario_path(u) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "cadastre-se", new_usuario_path %>
