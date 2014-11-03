@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	resources :listas
 	resources :perguntas
 	resources :respostas
+  resources :usuarios
 	
 	root 'home#index'
 
