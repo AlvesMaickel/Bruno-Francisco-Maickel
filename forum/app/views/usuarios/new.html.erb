@@ -1,0 +1,28 @@
+<h2>Novo Usuario</h2>
+
+
+  
+
+
+<%= form_for @usuario do |u| %>
+
+    <%= u.label 'Username' %>
+
+    <%= u.text_field :username, maxlength: 20 %>
+    <br>
+
+     <%= u.label 'Senha' %>
+
+    <%= u.password_field :senha %>
+     <br>
+
+   
+    <%= u.label 'Email' %>
+
+    <%= u.email_field  :email %>
+
+    <br>
+
+    <%= u.submit 'Salvar' %>
+
+<% end %>
