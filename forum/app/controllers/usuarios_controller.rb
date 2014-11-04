@@ -41,5 +41,10 @@ class UsuariosController < ApplicationController
         @usuario = Usuario.find(params[:id])
     end
 
+   def destroy
+        u = Usuario.find(params[:id])
+        u.destroy
+        redirect_to :usuarios, notice: "Usuario #{u.username} excluido"
+    end
    
 end
