@@ -23,4 +23,19 @@ class UsuariosController < ApplicationController
 
     end
 
+     def edit
+        @usuario = Usuario.find(params[:id])
+     end
+
+     def update
+        @usuario = Usuario.find(params[:id])
+        if @usuario.update(params.require(:usuario).permit(:username,:email,:senha))
+            redirect_to :usuarios, notice: "Usuario #{@usuario.username} atualizado"
+        else
+            render :edit
+        end
+    end
+
+
+   
 end
