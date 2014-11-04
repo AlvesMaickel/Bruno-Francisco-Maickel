@@ -35,7 +35,11 @@ class UsuariosController < ApplicationController
             render :edit
         end
     end
+   
 
+    def show
+        @usuario = Usuario.find(params[:id])
+    end
 
    
 end
