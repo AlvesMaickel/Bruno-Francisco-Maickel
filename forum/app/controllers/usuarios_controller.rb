@@ -1,4 +1,5 @@
 #Encoding UTF-8
+require 'digest'
 class UsuariosController < ApplicationController
    def index
    	@usuarios=Usuario.all
@@ -13,7 +14,8 @@ class UsuariosController < ApplicationController
    
 
           @usuario = Usuario.new(params.require(:usuario).permit(:username,:email,:senha))
-          @usuario.tipo=Tipo.find_by_id(1)        
+          @usuario.tipo=Tipo.find_by_id(1)
+          @usuario.senha = Digest::MD5.hexdigest(@usuario.senha)  
           if @usuario.save
               redirect_to :usuarios, notice: "Usuario #{@usuario.username} salvo"
           else
