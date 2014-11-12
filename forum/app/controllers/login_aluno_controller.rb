@@ -1,3 +1,4 @@
+require 'digest'
 class LoginAlunoController < ApplicationController
   def index
   end
@@ -9,10 +10,14 @@ class LoginAlunoController < ApplicationController
         render 'index'
     else
         session[:usuario] = u.username
-        redirect_to '/usuarios', notice:   ' Logado com sucesso'
+        redirect_to '/usuarios'
     end
   end
 
-  def logout
+ def logout
+    reset_session
+    redirect_to '/usuarios'
+
   end
+  
 end

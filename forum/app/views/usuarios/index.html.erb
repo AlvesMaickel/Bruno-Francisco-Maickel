@@ -3,9 +3,17 @@
     <%= content_tag :div, msg, class: name %>
 <% end %>
 
+<% if session[:usuario] %>
+
+    Logado como <%= session[:usuario] %>
+    <br>
+<a class="btn btn-danger" href="/logout">logout</a>
+<% end %>
+
     <br><br>
 <strong>Usuarios</strong>
 <br><br>
+
 
 
 <% @usuarios.each do |u| %>
