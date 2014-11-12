@@ -2,5 +2,14 @@
 
 
 <br><br><br>
-<h1>LoginAluno#index</h1>
-<p>Find me in app/views/login_aluno/index.html.erb</p>
+
+<%= form_tag({action: 'login'}, class: 'form-signin', method: 'post') do %>
+
+    <h2 class="form-signin-heading">Login do Usuario</h2>
+    <input type="text" name="username"
+        class="form-control" placeholder="Seu nome" required autofocus>
+    <input type="password"  name="senha"
+        class="form-control" placeholder="Sua senha" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+<% end %>
