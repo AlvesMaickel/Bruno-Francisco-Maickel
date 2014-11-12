@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
+
+ get 'login' => 'login_aluno#index', as: :login_form
+
+  post 'login/login', as: :login
+  post 'login/logout', as: :logout
+
 	resources :conteudos
 	resources :listas
 	resources :perguntas
 	resources :respostas
   resources :usuarios
 	
-	root 'home#index'
+
 
 
    match 'usuarios/deletar/:id', controller: 'usuarios', action: 'destroy', via: 'get'
