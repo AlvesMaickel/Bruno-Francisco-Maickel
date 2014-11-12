@@ -12,9 +12,13 @@
 
     <%= link_to u.username, usuario_path(u) %>
 
-    <%= link_to "Excluir", u, method: :delete %>
+    
 
     <%= link_to "Editar", edit_usuario_path(u) %>
+
+
+
+      <a href="usuarios/deletar/<%=u.id %>">Excluir moda grosso</a>
 
     <br><br>
 

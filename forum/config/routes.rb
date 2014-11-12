@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 	
 	root 'home#index'
 
+
+   match 'usuarios/deletar/:id', controller: 'usuarios', action: 'destroy', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
