@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Tipo.create nome:'aluno'
 Tipo.create nome:'admin'
-Usuario.create tipo:Tipo.find_by_id(1),username:'francisco',email:'francisco_neto_96@hotmail.com',senha:'ashrewert'
+

@@ -1,0 +1,13 @@
+<br><br><br>
+<h1>Nova Pergunta</h1>
+
+<%= form_for @pergunta do |p| %>
+
+	<%= p.label 'Qual a sua dúvida?' %>
+
+	<%= p.text_area :texto %>
+
+	<br>
+	<%= p.submit 'Perguntar' %>
+
+<% end %>

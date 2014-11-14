@@ -1,0 +1,15 @@
+<h3>Perguntas</h3>
+
+<% @pergunta.each do |p| %>
+
+    <%= link_to p.texto %>
+
+    <%= link_to "Editar", edit_pergunta_path(p) %>
+
+    <a href="perguntas/deletar/<%=p.id %>">Excluir <a/>
+    <br>
+
+<% end %>
+<br>
+
+<%= link_to "Nova pergunta", new_pergunta_path %>
