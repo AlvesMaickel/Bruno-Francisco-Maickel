@@ -8,10 +8,11 @@
 
     <%= link_to c.nome, lista_path(c) %>
 
-    <%= link_to "Excluir", c, method: :delete %>
+ 
 
     <%= link_to "Editar", edit_lista_path(c) %>
 
+ <a href="listas/deletar/<%=c.id %>">Excluir </a>
     <br><br>
 
 <% end %>

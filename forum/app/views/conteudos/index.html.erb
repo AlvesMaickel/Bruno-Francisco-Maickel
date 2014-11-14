@@ -8,9 +8,11 @@
 
     <%= link_to c.nome, conteudo_path(c) %>
 
-    <%= link_to "Excluir", c, method: :delete %>
+   
 
     <%= link_to "Editar", edit_conteudo_path(c) %>
+
+ <a href="conteudos/deletar/<%=c.id %>">Excluir </a>
 
     <br><br>
 
