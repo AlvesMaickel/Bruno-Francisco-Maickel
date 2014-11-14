@@ -2,7 +2,7 @@
 
 <% @pergunta.each do |p| %>
 
-    <%= link_to p.texto %>
+    <%= link_to p.texto, pergunta_path(p) %>
 
     <%= link_to "Editar", edit_pergunta_path(p) %>
 

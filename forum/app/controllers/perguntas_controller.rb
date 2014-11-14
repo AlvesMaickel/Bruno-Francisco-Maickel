@@ -25,4 +25,14 @@ class PerguntasController < ApplicationController
 	def show
 		@pergunta = Pergunta.find(params[:id])
 	end
+
+	def edit
+
+	end
+
+	def destroy
+        p = Pergunta.find(params[:id])
+        p.destroy
+        redirect_to :perguntas, notice: "Pergunta #{p.texto} excluido"
+    end
 end

@@ -1,0 +1,12 @@
+<h2>Editar Pergunta</h2>
+
+<%= form_for @usuario do |p| %>
+
+    <%= p.label 'Editar Pergunta:' %>
+
+    <%= p.text_field :texto %>
+    <br>
+
+    <%= p.submit 'Salvar' %>
+
+<% end %>
