@@ -23,11 +23,10 @@ class PerguntasController < ApplicationController
 	end
 
 	def show
-		@pergunta = Pergunta.find(params[:id])
 	end
 
 	def edit
-
+		
 	end
 
 	def destroy
