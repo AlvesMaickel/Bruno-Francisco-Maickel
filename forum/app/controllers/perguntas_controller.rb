@@ -28,8 +28,17 @@ class PerguntasController < ApplicationController
 	end
 
 	def edit
-
+		@pergunta = Pergunta.find(params[:id])
 	end
+
+	def update
+        @pergunta = Pergunta.find(params[:id])
+        if @pergunta.update(params.require(:pergunta).permit(:texto))
+            redirect_to :perguntas, notice: "Pergunta #{@pergunta.texto} modificado com sucesso"
+        else
+            render :edit
+        end
+    end
 
 	def destroy
         p = Pergunta.find(params[:id])
