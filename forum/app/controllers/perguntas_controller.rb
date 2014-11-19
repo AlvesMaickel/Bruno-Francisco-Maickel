@@ -24,6 +24,7 @@ class PerguntasController < ApplicationController
 
 	def show
 		@pergunta = Pergunta.find(params[:id])
+		@usuario = Usuario.find(@pergunta.usuario)
 	end
 
 	def edit
