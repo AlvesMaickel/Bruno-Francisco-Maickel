@@ -5,18 +5,18 @@
 <% end %>
 
 
-<%= form_for @lista, multipart: true do |c| %>
+<%= form_for @lista, :html => {:multipart=>true} do |l| %>
 
-    <%= c.label 'Nome' %>
+    <%= l.label 'Nome' %>
 
-    <%= c.text_field :nome, maxlength: 30 %>
+    <%= l.text_field :nome, maxlength: 30 %><br>
 
-    <%= c.file_field :arquivo, accept: 'application/pdf' %>
+    <%= file_field_tag :arq, accept: 'application/pdf' %><br>
 
     <% ar = Conteudo.all.map { |c| [c.nome, c.id]} %>
 
-    <%= select_tag(:conteudo,options_for_select(ar)) %>
+    <%= select_tag(:conteudo,options_for_select(ar)) %><br>
 
-    <%= c.submit 'Upload' %>
+    <%= l.submit 'Upload' %>
 
 <% end %>
