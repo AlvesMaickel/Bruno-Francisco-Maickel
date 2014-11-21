@@ -1,4 +1,9 @@
 <h2> Lista <%= @lista.nome %> </h2>
-<% = lista.bimestre %>º bimestre
-<% = # File.open(public/listas/#{lista.arquivo}.pdf) %>
-<% = @conteudo.nome %>
+<%= @conteudo.nome %><br>
+<%= @conteudo.bimestre %><br>
+
+
+
+
+
+<a href ="/lista/<%=@lista.arquivo%>.pdf">	P D F   </a> 
