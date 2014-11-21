@@ -5,13 +5,13 @@
 <% end %>
 
 
-<%= form_for @conteudo, multipart: true do |c| %>
+<%= form_for @conteudo, :html => {:multipart=>true} do |c| %>
 
     <%= c.label 'Nome' %>
 
     <%= c.text_field :nome, maxlength: 30 %>
 
-    <%= c.file_field :arquivo, accept: 'application/pdf' %>
+    <%= file_field_tag :arq, accept: 'application/pdf' %>
 
     <%= c.label 'Bimestre' %>
 
