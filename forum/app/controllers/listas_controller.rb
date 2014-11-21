@@ -10,7 +10,7 @@ class ListasController < ApplicationController
 	end
 
 	def create
-		format = params[:lista][:arquivo].original_filename
+		format = params[:arq].original_filename
 		format2 = format.split('.').last
 		uid = SecureRandom.uuid
 		@lista = Lista.new
@@ -26,11 +26,10 @@ class ListasController < ApplicationController
 		end
 
 		if @lista.save
-			dir = 'public/listas/'
-			arq = params[:lista][:arquivo]
+			dir = 'public/lista/'
 			file = dir + uid + ".pdf"
 			#FileUtils.cp File.open(arq.read,file)
-			arq.close
+			FileUtils.cp params[:arq].open, file
 			redirect_to :listas, notice: "Lista #{@lista.nome} salva" and return
 		else
 			render :new and return
@@ -47,7 +46,7 @@ class ListasController < ApplicationController
 		uid = SecureRandom.uuid
 		params[:lista][:arquivo] = uid
 		if @lista.update(params.require(:lista).permit(:nome,:arquivo))
-			file = 'public/uploads/' + uid +'.pdf'
+			file = 'public/lista/' + uid +'.pdf'
 			arq = params[:lista][:arquivo]
 			#FileUtils.cp (arq.read,file)
 			redirect_to :listas, notice: "Lista #{@lista.nome} atualizada"
