@@ -10,9 +10,16 @@ class ConteudosController < ApplicationController
 	end
 
 	def create
-		format = params[:conteudo][:arquivo].original_filename
+		format = params[:arq].original_filename
 		format2 = format.split('.').last
 		uid = SecureRandom.uuid
+		#puts ">>>>>>>"
+		#p params[:arq]
+		#puts params[:arq].class
+		#File.open("public/teste.pdf","w"){|f| f.write(params[:arq].open)}
+
+		# file = 'public/teste.pdf'
+		#redirect_to '/conteudos'
 		@conteudo = Conteudo.new
 
 		if format2 == "pdf"
@@ -26,14 +33,16 @@ class ConteudosController < ApplicationController
 
 		if @conteudo.save
 			dir = 'public/conteudo/'
-			arq = params[:conteudo][:arquivo]
+			arq = params[:arq]
 			file = dir + uid + ".pdf"
+			FileUtils.cp params[:arq].open, file
 			#FileUtils.cp File.open(arq.read,file)
 			arq.close
 			redirect_to :conteudos, notice: "Conteúdo #{@conteudo.nome} salvo" and return
 		else
 			render :new and return
 		end
+		
 	end
 
 	def edit
