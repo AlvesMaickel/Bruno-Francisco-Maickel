@@ -22,9 +22,12 @@ class PerguntasController < ApplicationController
 		end
 	end
 
+
 	def show
 		@pergunta = Pergunta.find(params[:id])
 		@usuario = Usuario.find(@pergunta.usuario)
+		session[:pergunta] = @pergunta.id
+		@resposta= Resposta.new
 	end
 
 	def edit

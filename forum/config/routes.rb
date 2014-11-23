@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
 	resources :conteudos
 	resources :listas
+  resources :respostas
 	resources :perguntas
-	resources :respostas
   resources :usuarios
 	
-
+  
    match 'usuarios/deletar/:id', controller: 'usuarios', action: 'destroy', via: 'get'
    match 'conteudos/deletar/:id', controller: 'conteudos', action: 'destroy', via: 'get'
    match 'listas/deletar/:id', controller: 'listas', action: 'destroy', via: 'get'

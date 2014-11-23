@@ -7,3 +7,16 @@
 <strong><%= @usuario.username %></strong>
 <br>
 <strong><%= @pergunta.horario %></strong>
+
+
+
+<%= form_for @resposta do |p| %>
+
+	<%= p.label 'Insira sua resposta:' %>
+
+	<%= p.text_area :texto %>
+
+	<br>
+	<%= p.submit 'responder' %>
+
+<% end %>
