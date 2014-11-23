@@ -11,9 +11,10 @@ class RespostasController < ApplicationController
             @resposta.util_s=0
             @pergunta=Pergunta.find(session[:pergunta])		
  		if @resposta.save
-			redirect_to :perguntas, notice: "resposta #{@resposta.texto} realizada com sucesso"
+			
+			redirect_to "/perguntas/#{@pergunta.id}", notice: "resposta #{@resposta.texto} realizada com sucesso"
 		else
-			render  "/perguntas/#{@pergunta.id}"
+			render  "/perguntas"
 		end
 	end
 

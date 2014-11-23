@@ -27,6 +27,7 @@ class PerguntasController < ApplicationController
 		@pergunta = Pergunta.find(params[:id])
 		@usuario = Usuario.find(@pergunta.usuario)
 		session[:pergunta] = @pergunta.id
+		@respostas = Resposta.where("pergunta_id=?",@pergunta.id)
 		@resposta= Resposta.new
 	end
 

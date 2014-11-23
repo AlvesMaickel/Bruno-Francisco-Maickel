@@ -7,7 +7,14 @@
 <strong><%= @usuario.username %></strong>
 <br>
 <strong><%= @pergunta.horario %></strong>
+<br>
 
+<% @respostas.each do |p| %>
+
+  <strong><%= p.texto %></strong>
+  <br>
+
+<% end %>
 
 
 <%= form_for @resposta do |p| %>
