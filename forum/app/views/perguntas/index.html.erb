@@ -1,15 +1,23 @@
 <h3>Perguntas</h3>
 
+<table class="table table-bordered table-hover">
 <% @pergunta.each do |p| %>
-
-    <%= link_to p.texto, pergunta_path(p) %>
-
-    <%= link_to "Editar", edit_pergunta_path(p) %>
-
-    <a href="perguntas/deletar/<%=p.id %>">Excluir <a/>
+	<tr>
+		<th>
+    		<%= link_to p.texto, pergunta_path(p) %>
+    	</th>
+    	<th>
+    		<%= link_to "Editar", edit_pergunta_path(p) %>
+    	</th>
+    	<th>
+    		<a href="perguntas/deletar/<%=p.id %>">Excluir <a/>
+    	</th>
+    </tr>
     <br>
 
 <% end %>
+
+</table>
 <br>
 
 <%= link_to "Nova pergunta", new_pergunta_path %>
