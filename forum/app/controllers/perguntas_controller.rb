@@ -44,10 +44,23 @@ class PerguntasController < ApplicationController
 
 	def edit
 		@pergunta = Pergunta.find(params[:id])
+		@conteudos = Conteudo.all
+		@listas = Lista.all
 	end
 
 	def update
+
         @pergunta = Pergunta.find(params[:id])
+
+		if @conteudo=Conteudo.find_by_nome(params[:conteudo])
+			@pergunta.conteudo=Conteudo.find(@conteudo) 
+		end 
+        
+        if @lista=Lista.find_by_nome(params[:lista])
+			@pergunta.lista=Lista.find(@lista) 
+		end 
+
+
         if @pergunta.update(params.require(:pergunta).permit(:texto))
             redirect_to :perguntas, notice: "Pergunta #{@pergunta.texto} modificado com sucesso"
         else
