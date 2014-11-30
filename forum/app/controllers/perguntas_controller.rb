@@ -7,6 +7,8 @@ class PerguntasController < ApplicationController
 
 	def new
 		@pergunta = Pergunta.new
+		@conteudos = Conteudo.all
+		@listas = Lista.all
 	end
 
 	def create
@@ -15,10 +17,19 @@ class PerguntasController < ApplicationController
 			@pergunta.usuario = Usuario.find_by_id(session[:id_usuario])
 			@pergunta.n_respostas = 0
 			@pergunta.respondida = 'n'
+		
+		if @conteudo=Conteudo.find_by_nome(params[:conteudo])
+			@pergunta.conteudo=Conteudo.find(@conteudo) 
+		end 
+        
+        if @lista=Lista.find_by_nome(params[:lista])
+			@pergunta.lista=Lista.find(@lista) 
+		end 
+			
 		if @pergunta.save
 			redirect_to :perguntas, notice: "Pergunta #{@pergunta.texto} realizada com sucesso"
 		else
-			render :new
+			redirect :new
 		end
 	end
 

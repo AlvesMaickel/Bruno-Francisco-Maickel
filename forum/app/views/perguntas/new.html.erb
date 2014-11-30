@@ -6,8 +6,31 @@
 	<%= p.label 'Qual a sua dúvida?' %>
 
 	<%= p.text_area :texto %>
-
 	<br>
+
+	 <%= p.label 'Conteudo' %>
+      <select id="conteudo" name="conteudo">
+        <option value="nada">Nenhum</option>
+      <% @conteudos.each do |b| %>
+            
+        <%= options_for_select([b.nome]) %>
+
+      <% end %>
+      </select>
+
+     <br>
+         <%= p.label 'Lista' %>
+      <select id="lista" name="lista">
+        <option value="nada">Nenhum</option>
+      <% @listas.each do |b| %>
+            
+        <%= options_for_select([b.nome]) %>
+
+      <% end %>
+      </select>
+
+     <br>
+
 	<%= p.submit 'Perguntar' %>
 
 <% end %>
