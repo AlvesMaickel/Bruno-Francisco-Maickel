@@ -1,6 +1,12 @@
 require 'digest'
 class LoginAlunoController < ApplicationController
   def index
+     if session[:usuario]
+         rendirect_to '/perguntas'
+        end
+         if session[:admin]
+         redirect_to '/perguntas'
+        end
   end
 
   def login

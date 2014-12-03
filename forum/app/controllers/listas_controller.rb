@@ -6,12 +6,31 @@ class ListasController < ApplicationController
 		if session[:usuario]
          render layout: 'aluno'
         end
+       
+       if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end   
+       
+         if session[:admin]
+         render layout: 'admin'
+         end
         
 	end
 
 	def new
 		@lista = Lista.new
 		@conteudos = Conteudo.all
+		 if session[:admin]
+         render layout: 'admin'
+        end
+
+        if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end 
+
+      if session[:usuario]
+        redirect_to '/perguntas'
+     end
 	end
 
 	def create
@@ -44,6 +63,17 @@ class ListasController < ApplicationController
 	def edit
 		@lista = Lista.find(params[:id])
 		@conteudos = Conteudo.all
+		 if session[:admin]
+         render layout: 'admin'
+        end
+
+        if session[:usuario].nil? and session[:admin].nil?
+            redirect_to '/login'
+        end 
+
+         if session[:usuario]
+        redirect_to '/perguntas'
+     end
 	end
 
 	def update
@@ -77,7 +107,12 @@ class ListasController < ApplicationController
 		if session[:usuario]
          render layout: 'aluno'
         end
-        
+         if session[:admin]
+         render layout: 'admin'
+        end
+       if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end   
 	end
 
 end

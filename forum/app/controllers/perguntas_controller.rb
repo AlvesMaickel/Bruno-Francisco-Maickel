@@ -6,6 +6,12 @@ class PerguntasController < ApplicationController
 		if session[:usuario]
          render layout: 'aluno'
         end
+         if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end   
         
 	end
 
@@ -17,6 +23,12 @@ class PerguntasController < ApplicationController
 	    if session[:usuario]
          render layout: 'aluno'
         end
+         if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end   
 
 	end
 
@@ -53,6 +65,12 @@ class PerguntasController < ApplicationController
         if session[:usuario]
          render layout: 'aluno'
         end
+         if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end   
         
 	end
 
@@ -64,7 +82,12 @@ class PerguntasController < ApplicationController
         if session[:usuario]
          render layout: 'aluno'
         end
-        
+         if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end   
 	end
 
 	def update

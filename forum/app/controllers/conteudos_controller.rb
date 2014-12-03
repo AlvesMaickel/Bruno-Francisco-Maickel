@@ -6,11 +6,28 @@ class ConteudosController < ApplicationController
 		if session[:usuario]
          render layout: 'aluno'
         end
+
+       if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+       end 
+
+        if session[:admin]
+         render layout: 'admin'
+        end
         
 	end
 
 	def new
 		@conteudo = Conteudo.new
+		 if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end 
+     if session[:usuario]
+        redirect_to '/perguntas'
+     end
 	end
 
 	def create
@@ -51,6 +68,15 @@ class ConteudosController < ApplicationController
 
 	def edit
 		@conteudo = Conteudo.find(params[:id])
+		 if session[:admin]
+         render layout: 'admin'
+        end
+         if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end 
+     if session[:usuario]
+        redirect_to '/perguntas'
+     end
 	end
 
 	def update
@@ -82,6 +108,12 @@ class ConteudosController < ApplicationController
 		if session[:usuario]
          render layout: 'aluno'
         end
+         if session[:admin]
+         render layout: 'admin'
+        end
+        if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end 
         
 	end
 

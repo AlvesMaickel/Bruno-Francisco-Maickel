@@ -3,10 +3,29 @@ require 'digest'
 class UsuariosController < ApplicationController
    def index
    	@usuarios=Usuario.all
+    if session[:admin]
+         render layout: 'admin'
+      end
+     
+     if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+     end 
+     if session[:usuario]
+        redirect_to '/perguntas'
+     end
    end
 
    def new
+      if session[:admin]
+         render layout: 'admin'
+      end
+     
+     if session[:usuario]
+        redirect_to '/perguntas'
+     end
         @usuario = Usuario.new
+     
+
    end
 
 
@@ -30,12 +49,18 @@ class UsuariosController < ApplicationController
          if session[:usuario]
          render layout: 'aluno'
         end
-
+        if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+        end 
+         if session[:admin]
+         render layout: 'admin'
+        end
      end
 
      def update
         @usuario = Usuario.find(params[:id])
-        if @usuario.update(params.require(:usuario).permit(:username,:email,:senha))
+        @usuario.senha = Digest::MD5.hexdigest(params[:senha])
+        if @usuario.update(params.require(:usuario).permit(:username,:email))
             redirect_to :usuarios, notice: "Usuario #{@usuario.username} atualizado"
         else
             render :edit
@@ -44,7 +69,19 @@ class UsuariosController < ApplicationController
    
 
     def show
+        if session[:usuario]
+         render layout: 'aluno'
+        end
+        
+        if session[:usuario].nil? and session[:admin].nil?
+        redirect_to '/login'
+        end 
+        
+        if session[:admin]
+         render layout: 'admin'
+        end
         @usuario = Usuario.find(params[:id])
+         
     end
 
    def destroy
