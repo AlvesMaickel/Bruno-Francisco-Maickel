@@ -16,6 +16,9 @@
 <% @respostas.each do |p| %>
 	<tr>
   		<th>
+  			<%= link_to p.username, usuario_path(p.usuario) %>
+  		</th>
+  		<th>
   			<%= p.texto %>
   		</th>
   	</tr>

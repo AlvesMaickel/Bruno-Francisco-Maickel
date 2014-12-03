@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102235844) do
+ActiveRecord::Schema.define(version: 20141203200630) do
 
   create_table "conteudos", force: true do |t|
     t.integer  "bimestre"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141102235844) do
     t.integer  "util_n"
     t.datetime "horario"
     t.string   "arquivo",     limit: 36
+    t.string   "username",    limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
   end

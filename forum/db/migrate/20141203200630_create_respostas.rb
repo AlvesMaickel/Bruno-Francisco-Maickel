@@ -8,6 +8,7 @@ class CreateRespostas < ActiveRecord::Migration
       t.integer :util_n
       t.timestamp :horario
       t.string :arquivo, limit: 36
+      t.string :username, limit: 50
 
       t.timestamps
     end
