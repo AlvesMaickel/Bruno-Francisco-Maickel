@@ -3,6 +3,10 @@ class ConteudosController < ApplicationController
 
 	def index
 		@conteudos = Conteudo.all
+		if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 	def new
@@ -75,6 +79,10 @@ class ConteudosController < ApplicationController
 
 	def show
 		@conteudo = Conteudo.find(params[:id])
+		if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 end

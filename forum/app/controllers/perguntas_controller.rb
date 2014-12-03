@@ -3,12 +3,21 @@ class PerguntasController < ApplicationController
 
 	def index
 		@pergunta = Pergunta.all
+		if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 	def new
 		@pergunta = Pergunta.new
 		@conteudos = Conteudo.all
 		@listas = Lista.all
+
+	    if session[:usuario]
+         render layout: 'aluno'
+        end
+
 	end
 
 	def create
@@ -40,12 +49,22 @@ class PerguntasController < ApplicationController
 		session[:pergunta] = @pergunta.id
 		@respostas = Resposta.where("pergunta_id=?",@pergunta.id)
 		@resposta= Resposta.new
+        
+        if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 	def edit
 		@pergunta = Pergunta.find(params[:id])
 		@conteudos = Conteudo.all
 		@listas = Lista.all
+        
+        if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 	def update

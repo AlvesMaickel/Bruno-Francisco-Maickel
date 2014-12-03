@@ -2,6 +2,11 @@
 class ListasController < ApplicationController
 	def index
 		@listas = Lista.all
+
+		if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 	def new
@@ -68,6 +73,11 @@ class ListasController < ApplicationController
 	def show
 		@lista = Lista.find(params[:id])
 		@conteudo = Conteudo.find(@lista.conteudo)
+
+		if session[:usuario]
+         render layout: 'aluno'
+        end
+        
 	end
 
 end

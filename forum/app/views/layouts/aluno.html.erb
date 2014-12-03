@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Trabalho" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "CORE" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -34,7 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-
   </head>
   <body>
 
@@ -46,18 +45,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Trabalho</a>
+          <a class="brand" href="#">Matemática I</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><h4>Olá <%=session[:usuario]%></h4></li>
+              <li><a href="usuarios/<%=session[:id_usuario]%>/edit">Atualizar meus dados </a></li>
+              <li><%= link_to "Sair", "/logout"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-
     <div class="container">
         <div class="row">
           <div class="span9">
@@ -65,13 +63,15 @@
             <%= yield %>
           </div>
           <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
+            <div class="well sidebar-nav" id="sidebar-nav">
+              <h3>Opções</h3>
               <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+                <li class="nav-header">Visualizar:</li>
+                <li><%= link_to "Perguntas", "/perguntas"  %></li>
+                <li><%= link_to "conteudos", "/conteudos"  %></li>
+                 <li><%= link_to "listas", "/listas"  %></li>
+                
+
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

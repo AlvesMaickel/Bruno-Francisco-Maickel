@@ -6,6 +6,20 @@
   text-align: center;
 }
 
+
+body {
+  padding-top: 36px;
+}
+.sidebar-nav {
+
+    float: left;
+    width: 150px;
+   
+    margin-left: 1110px;
+    left: 70px;
+    position: fixed;
+    height: 100%;
+} 
 .form-signin {
   max-width: 330px;
   padding: 15px;
