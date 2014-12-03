@@ -69,7 +69,7 @@ class ConteudosController < ApplicationController
 	def edit
 		@conteudo = Conteudo.find(params[:id])
 		 if session[:admin]
-         render layout: 'admin'
+         redirect_to '/perguntas'
         end
          if session[:usuario].nil? and session[:admin].nil?
         redirect_to '/login'

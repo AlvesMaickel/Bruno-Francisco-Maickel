@@ -6,18 +6,18 @@
 
 <%= form_for @usuario do |u| %>
 
-    <%= u.label 'Username' %>
+    <%= u.label 'Username:' %>
 
     <%= u.text_field :username, maxlength: 20 %>
     <br>
 
-     <%= u.label 'Senha' %>
+     <%= u.label 'Senha:' %>
 
     <%= u.password_field :senha %>
      <br>
 
    
-    <%= u.label 'Email' %>
+    <%= u.label 'Email:' %>
 
     <%= u.email_field  :email %>
 

@@ -17,7 +17,7 @@ class RespostasController < ApplicationController
 			
 			redirect_to "/perguntas/#{@pergunta.id}", notice: "resposta #{@resposta.texto} realizada com sucesso"
 		else
-			render  "/perguntas"
+			redirect_to "/perguntas/#{@pergunta.id}"
 		end
 	end
 

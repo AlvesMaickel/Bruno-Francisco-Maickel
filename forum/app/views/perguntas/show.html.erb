@@ -1,11 +1,14 @@
 <br><br>
 <br><br>
-<legend><%= @pergunta.texto %></legend>
-<strong><%= @usuario.username %></strong>
+<strong>Pergunta:<%= @pergunta.texto %></strong>
 <br>
-<strong><%= @pergunta.horario %></strong>
+<strong>Usuario:</strong>
+<%= link_to @usuario.username, usuario_path(@usuario) %>
+<br>
+<strong>Horário:<%= @pergunta.horario %></strong>
 <br>
 <br>
+<strong>Respostas:</strong>
 <br>
 
 <table class="table table-bordered table-striped">

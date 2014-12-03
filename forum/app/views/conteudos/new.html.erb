@@ -7,13 +7,13 @@
 
 <%= form_for @conteudo, :html => {:multipart=>true} do |c| %>
 
-    <%= c.label 'Nome' %>
+    <%= c.label 'Nome:' %>
 
     <%= c.text_field :nome, maxlength: 30 %>
 
     <%= file_field_tag :arq, accept: 'application/pdf' %>
 
-    <%= c.label 'Bimestre' %>
+    <%= c.label 'Bimestre:' %>
 
     <%= c.number_field :bimestre, min: 1, max: 4 %>
 

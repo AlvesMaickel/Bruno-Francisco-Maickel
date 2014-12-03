@@ -7,11 +7,13 @@
 
 <%= form_for @lista, :html => {:multipart=>true} do |l| %>
 
-    <%= l.label 'Nome' %>
+    <%= l.label 'Nome:' %>
 
     <%= l.text_field :nome, maxlength: 30 %><br>
 
     <%= file_field_tag :arq, accept: 'application/pdf' %><br>
+
+   <%= l.label 'Conteúdo:' %>
 
     <% ar = Conteudo.all.map { |c| [c.nome, c.id]} %>
 

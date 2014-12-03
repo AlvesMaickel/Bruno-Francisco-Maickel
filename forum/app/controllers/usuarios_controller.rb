@@ -40,7 +40,7 @@ class UsuariosController < ApplicationController
           if @usuario.save
               redirect_to :usuarios, notice: "Usuario #{@usuario.username} salvo"
           else
-              render :new
+             redirect_to "http://localhost:3000/usuarios/new"
           end
       
 
@@ -66,7 +66,7 @@ class UsuariosController < ApplicationController
         if @usuario.update(params.require(:usuario).permit(:username,:email))
             redirect_to :usuarios, notice: "Usuario #{@usuario.username} atualizado"
         else
-            render :edit
+           redirect_to "http://localhost:3000/usuarios/#{@usuario.id}/edit"
         end
     end
    

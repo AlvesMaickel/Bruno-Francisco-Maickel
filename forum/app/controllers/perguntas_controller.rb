@@ -50,7 +50,7 @@ class PerguntasController < ApplicationController
 		if @pergunta.save
 			redirect_to :perguntas, notice: "Pergunta #{@pergunta.texto} realizada com sucesso"
 		else
-			redirect :new
+			redirect_to "http://localhost:3000/perguntas/new"
 		end
 	end
 
@@ -106,7 +106,7 @@ class PerguntasController < ApplicationController
         if @pergunta.update(params.require(:pergunta).permit(:texto))
             redirect_to :perguntas, notice: "Pergunta #{@pergunta.texto} modificado com sucesso"
         else
-            render :edit
+          redirect_to  "http://localhost:3000/perguntas/#{@pergunta.id}/edit"
         end
     end
 

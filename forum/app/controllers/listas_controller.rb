@@ -64,7 +64,7 @@ class ListasController < ApplicationController
 		@lista = Lista.find(params[:id])
 		@conteudos = Conteudo.all
 		 if session[:admin]
-         render layout: 'admin'
+         redirect_to '/perguntas'
         end
 
         if session[:usuario].nil? and session[:admin].nil?
