@@ -45,13 +45,14 @@ class UsuariosController < ApplicationController
     end
 
      def edit
+      
         @usuario = Usuario.find(params[:id])
-         if session[:usuario]
+        if session[:usuario]
          render layout: 'aluno'
         end
-        if session[:usuario].nil? and session[:admin].nil?
-        redirect_to '/login'
-        end 
+       if session[:usuario].nil? and session[:admin].nil?
+          redirect_to '/login'
+       end 
          if session[:admin]
          render layout: 'admin'
         end
