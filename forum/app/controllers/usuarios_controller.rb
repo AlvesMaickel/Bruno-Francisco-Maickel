@@ -16,6 +16,8 @@ class UsuariosController < ApplicationController
    end
 
    def new
+       @usuario = Usuario.new
+
       if session[:admin]
          render layout: 'admin'
       end
@@ -23,7 +25,7 @@ class UsuariosController < ApplicationController
      if session[:usuario]
         redirect_to '/perguntas'
      end
-        @usuario = Usuario.new
+       
      
 
    end
