@@ -27,6 +27,10 @@ class UsuariosController < ApplicationController
 
      def edit
         @usuario = Usuario.find(params[:id])
+         if session[:usuario]
+         render layout: 'aluno'
+        end
+
      end
 
      def update
