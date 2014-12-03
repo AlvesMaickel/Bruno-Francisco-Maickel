@@ -72,6 +72,7 @@ class UsuariosController < ApplicationController
    
 
     def show
+        @usuario = Usuario.find(params[:id])
         if session[:usuario]
          render layout: 'aluno'
         end
@@ -83,8 +84,7 @@ class UsuariosController < ApplicationController
         if session[:admin]
          render layout: 'admin'
         end
-        @usuario = Usuario.find(params[:id])
-         
+     
     end
 
    def destroy
