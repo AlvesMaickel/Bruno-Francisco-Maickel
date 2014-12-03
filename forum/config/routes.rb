@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
 
+  get 'login_admin/login2'
+
+  get 'login_admin/logout2'
+
  get 'login' => 'login_aluno#index', as: :login_form
 
  post 'login_aluno/login', as: :login
  get 'logout'=> 'login_aluno#logout', as: :logout
+
+
+ get "admin"=> 'login_admin#index', as: :loginempresa_form
+  post 'admin/login2',as: :login2
+  get 'logout2'=> 'login_admin#logout2', as: :logout2
 
 	resources :conteudos
 	resources :listas
