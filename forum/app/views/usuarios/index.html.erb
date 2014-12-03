@@ -6,15 +6,15 @@
 <% if session[:usuario] %>
 
     <h3>Bem Vindo,  <%= session[:usuario] %></h3>
-    <br>
-<a class="btn btn-danger" href="/logout">logout</a>
+   
 <% end %>
 
     <br><br>
 <strong>Usuarios</strong>
 
 
-<table class="table table-bordered">
+<table class="table table-bordered" 
+		style="width: 700px;">
 <%  @usuarios.each do |u| %>
 
 	<tr>
@@ -24,7 +24,7 @@
 		<th style="width: 102px;" style="height: 20px">
 			<%= link_to "Editar", edit_usuario_path(u) %>
 		</th>
-		<th style="width: 119px;" style="height: 20px">
+		<th style="width: 102px;" style="height: 20px">
 			<a href="usuarios/deletar/<%=u.id %>">Excluir </a>
 		</th>
 	</tr>
