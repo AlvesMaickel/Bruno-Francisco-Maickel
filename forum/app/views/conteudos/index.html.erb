@@ -4,18 +4,26 @@
     <%= content_tag :div, msg, class: name %>
 <% end %>
 
+<table class="table table-bordered" 
+		style="width: 700px;">
+
 <% @conteudos.each do |c| %>
+<tr>
+	<th>
+		<%= link_to c.nome, conteudo_path(c) %>
+	</th>
+	<th style="width: 102px;" style="height: 20px">
+		<%= link_to "Editar", edit_conteudo_path(c) %>
+	</th>
+	<th style="width: 102px;" style="height: 20px">
+		<a href="conteudos/deletar/<%=c.id %>">Excluir </a>
+	</th>
+</tr>
 
-    <%= link_to c.nome, conteudo_path(c) %>
-
-   
-
-    <%= link_to "Editar", edit_conteudo_path(c) %>
-
- <a href="conteudos/deletar/<%=c.id %>">Excluir </a>
-
-    <br><br>
+	<br>
 
 <% end %>
+
+</table>
 
 <%= link_to "Upload de Conteúdo", new_conteudo_path %>
