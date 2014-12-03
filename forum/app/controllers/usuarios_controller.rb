@@ -59,7 +59,7 @@ class UsuariosController < ApplicationController
 
      def update
         @usuario = Usuario.find(params[:id])
-        @usuario.senha = Digest::MD5.hexdigest(params[:senha])
+        @usuario.senha = Digest::MD5.hexdigest(params[:usuario][:senha])
         if @usuario.update(params.require(:usuario).permit(:username,:email))
             redirect_to :usuarios, notice: "Usuario #{@usuario.username} atualizado"
         else

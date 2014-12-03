@@ -9,4 +9,4 @@ Tipo.create nome:'aluno'
 Tipo.create nome:'admin'
 
 Senha = Digest::MD5.hexdigest('admin')  
-Usuario.create tipo:Tipo.find_by_id(1),username:'admin',email:'admin@gmail.com',senha: Senha
+Usuario.create tipo:Tipo.find_by_id(2),username:'admin',email:'admin@gmail.com',senha: Senha

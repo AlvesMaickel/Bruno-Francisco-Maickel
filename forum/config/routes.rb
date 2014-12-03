@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
  get "admin"=> 'login_admin#index', as: :loginempresa_form
-  post 'admin/login2',as: :login2
+  post 'login_admin/login2',as: :login2
   get 'logout2'=> 'login_admin#logout2', as: :logout2
 
 	resources :conteudos

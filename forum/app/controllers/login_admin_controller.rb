@@ -2,7 +2,7 @@ require 'digest'
 class LoginAdminController < ApplicationController
    def index
        if session[:usuario]
-         rendirect_to '/perguntas'
+         redirect_to '/perguntas'
         end
          if session[:admin]
          redirect_to '/perguntas'
