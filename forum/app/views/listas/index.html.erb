@@ -12,12 +12,16 @@
 	<th>
     	<%= link_to c.nome, lista_path(c) %>
     </th>
+    
+    <%if session[:admin] %>
     <th style="width: 102px;" style="height: 20px">
     	<%= link_to "Editar", edit_lista_path(c) %>
     </th>
     <th style="width: 102px;" style="height: 20px">
  		<a href="listas/deletar/<%=c.id %>">Excluir </a>
  	</th>
+ <% end %>
+
  </tr>
 
     <br><br>
@@ -26,4 +30,7 @@
 
 </table>
 
+
+ <%if session[:admin] %>
 <%= link_to "Upload de Lista", new_lista_path %>
+<% end %>

@@ -12,12 +12,16 @@
 	<th>
 		<%= link_to c.nome, conteudo_path(c) %>
 	</th>
+
+
+    <%if session[:admin] %>
 	<th style="width: 102px;" style="height: 20px">
 		<%= link_to "Editar", edit_conteudo_path(c) %>
 	</th>
 	<th style="width: 102px;" style="height: 20px">
 		<a href="conteudos/deletar/<%=c.id %>">Excluir </a>
 	</th>
+	<% end %>
 </tr>
 
 	<br>
@@ -26,4 +30,8 @@
 
 </table>
 
+
+ 
+ <%if session[:admin] %>
 <%= link_to "Upload de Conteúdo", new_conteudo_path %>
+<% end %>
