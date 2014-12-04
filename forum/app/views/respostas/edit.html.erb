@@ -1,0 +1,11 @@
+<br>
+<%= form_for @resposta do |p| %>
+
+	<%= p.label 'Insira sua resposta:' %>
+
+	<%= p.text_area :texto %>
+
+	<br>
+	<%= p.submit 'Atualizar resposta' %>
+
+<% end %>

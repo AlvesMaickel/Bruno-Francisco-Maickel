@@ -17,6 +17,18 @@
     	</th>
      <% end %>
 
+     <%if session[:id_usuario] == p.usuario_id %>
+        <th style="width: 102px;" style="height: 20px">
+            <%= link_to "Editar", edit_pergunta_path(p) %>
+        </th>
+        <th style="width: 102px;" style="height: 20px">
+            <a href="perguntas/deletar/<%=p.id %>">Excluir <a/>
+        </th>
+     <% end %>
+
+
+
+
     </tr>
     <br>
 

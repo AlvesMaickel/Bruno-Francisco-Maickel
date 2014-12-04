@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    match 'conteudos/deletar/:id', controller: 'conteudos', action: 'destroy', via: 'get'
    match 'listas/deletar/:id', controller: 'listas', action: 'destroy', via: 'get'
    match 'perguntas/deletar/:id', controller: 'perguntas', action: 'destroy', via: 'get'
+   match 'perguntas/respostas/deletar/:id', controller: 'respostas', action: 'destroy', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

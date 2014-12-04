@@ -21,6 +21,24 @@
   		<th>
   			<%= p.texto %>
   		</th>
+
+      <%if session[:admin] %>
+        <th style="width: 102px;" style="height: 20px">
+        <%= link_to "Editar", edit_resposta_path(p) %>
+      </th>
+      <th style="width: 102px;" style="height: 20px">
+        <a href="respostas/deletar/<%=p.id %>">Excluir <a/>
+      </th>
+     <% end %>
+
+     <%if session[:id_usuario] == p.usuario_id and session[:usuario] %>
+        <th style="width: 102px;" style="height: 20px">
+        <%= link_to "Editar", edit_resposta_path(p) %>
+      </th>
+      <th style="width: 102px;" style="height: 20px">
+        <a href="respostas/deletar/<%=p.id %>">Excluir <a/>
+      </th>
+     <% end %>
   	</tr>
 
 <% end %>

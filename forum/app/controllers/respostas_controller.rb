@@ -27,5 +27,40 @@ class RespostasController < ApplicationController
 		end
 	end
 
+
+
+    def edit
+      
+        @resposta = Resposta.find(params[:id])
+        if session[:usuario]
+         render layout: 'aluno'
+        end
+       if session[:usuario].nil? and session[:admin].nil?
+          redirect_to '/login'
+       end 
+         if session[:admin]
+         render layout: 'admin'
+        end
+     end
+
+    
+     def update
+        @resposta = Resposta.find(params[:id])
+      
+        if @resposta.update(params.require(:resposta).permit(:texto))
+           redirect_to "/perguntas/#{@resposta.pergunta_id}"
+        else
+           redirect_to "http://localhost:3000/respostas/#{@resposta.id}/edit"
+        end
+    end
+   
+
+     def destroy
+        r = Resposta.find(params[:id])
+        r.destroy
+        redirect_to "/perguntas/#{r.pergunta_id}"
+    end
+
+
 	
 end
