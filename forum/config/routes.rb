@@ -10,6 +10,7 @@ Rails.application.routes.draw do
  post 'login_aluno/login', as: :login
  get 'logout'=> 'login_aluno#logout', as: :logout
 
+root 'login_aluno#index'
 
  get "admin"=> 'login_admin#index', as: :loginempresa_form
   post 'login_admin/login2',as: :login2
